@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!---->
+<BC4JConfig xmlns="http://xmlns.oracle.com/bc4j/configuration" version="11.1">
+  <AppModuleConfigBag ApplicationName="de.hahn.blog.filterlistview.model.adfbc.service.BFLVAppModule">
+    <AppModuleConfig name="BFLVAppModuleLocal" jbo.project="de.hahn.blog.filterlistview.model.BFLVModel"
+                     ApplicationName="de.hahn.blog.filterlistview.model.adfbc.service.BFLVAppModule" DeployPlatform="LOCAL">
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HrConnDS"/>
+      <Security AppModuleJndiName="de.hahn.blog.filterlistview.model.adfbc.service.BFLVAppModule"/>
+    </AppModuleConfig>
+    <AppModuleConfig name="BFLVAppModuleShared" jbo.project="de.hahn.blog.filterlistview.model.BFLVModel"
+                     ApplicationName="de.hahn.blog.filterlistview.model.adfbc.service.BFLVAppModule" DeployPlatform="LOCAL">
+      <AM-Pooling jbo.ampool.maxpoolsize="1" jbo.ampool.isuseexclusive="false"/>
+      <Database jbo.TypeMapEntries="OracleApps" JDBCDataSource="java:comp/env/jdbc/HrConnDS"/>
+      <Security AppModuleJndiName="de.hahn.blog.filterlistview.model.adfbc.service.BFLVAppModule"/>
+    </AppModuleConfig>
+  </AppModuleConfigBag>
+</BC4JConfig>

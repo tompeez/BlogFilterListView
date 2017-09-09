@@ -1,0 +1,68 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<!DOCTYPE html>
+<f:view xmlns:f="http://java.sun.com/jsf/core" xmlns:af="http://xmlns.oracle.com/adf/faces/rich">
+    <af:document title="index.jsf" id="d1">
+        <af:messages id="m1"/>
+        <af:form id="f1">
+            <af:panelGridLayout id="pgl1">
+                <af:gridRow height="50px" id="gr2">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc1">
+                        <!-- Header -->
+                        <af:outputText value="Filter List View" id="ot1" inlineStyle="font-size:x-large;"/>
+                    </af:gridCell>
+                </af:gridRow>
+                <af:gridRow height="100%" id="gr1">
+                    <af:gridCell width="100%" halign="stretch" valign="stretch" id="gc2">
+                        <!-- Content -->
+                        <af:panelGroupLayout layout="vertical" id="pgl2">
+                            <af:panelHeader text="Employees" id="ph1">
+                                <af:query id="qryId1" headerText="Search" disclosed="true" value="#{bindings.EmployeeListCriteriaQuery.queryDescriptor}"
+                                          model="#{bindings.EmployeeListCriteriaQuery.queryModel}"
+                                          queryListener="#{bindings.EmployeeListCriteriaQuery.processQuery}"
+                                          queryOperationListener="#{bindings.EmployeeListCriteriaQuery.processQueryOperation}" resultComponentId="::lv1"/>
+                            </af:panelHeader>
+                            <af:listView value="#{bindings.EmployeesView1.collectionModel}" var="item"
+                                         emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
+                                         fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1">
+                                <af:listItem id="li1">
+                                    <af:panelGridLayout id="pgl3">
+                                        <af:gridRow marginTop="5px" height="auto" id="gr3">
+                                            <af:gridCell marginStart="5px" rowSpan="3" width="20%" id="gc3" halign="center" valign="middle">
+                                                <af:outputFormatted value="#{item.bindings.EmployeeId.inputValue}" id="of1"
+                                                                    inlineStyle="font-size:large; color:Blue; font-weight:bold;">
+                                                    <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView1.hints.EmployeeId.format}"/>
+                                                </af:outputFormatted>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" width="50%" id="gc4">
+                                                <af:outputFormatted value="#{item.bindings.FirstName.inputValue}" id="of2"/>
+                                            </af:gridCell>
+                                            <af:gridCell marginStart="5px" rowSpan="3" width="30%" marginEnd="5px" id="gc5" halign="center" valign="middle">
+                                                <af:selectOneChoice value="#{item.bindings.DepartmentId.inputValue}" label="#{item.bindings.DepartmentId.label}"
+                                                                    required="#{bindings.EmployeesView1.hints.DepartmentId.mandatory}"
+                                                                    shortDesc="#{bindings.EmployeesView1.hints.DepartmentId.tooltip}" id="soc1" simple="true"
+                                                                    readOnly="true" contentStyle="font-size:medium;">
+                                                    <f:selectItems value="#{item.bindings.DepartmentId.items}" id="si1"/>
+                                                    <f:validator binding="#{item.bindings.DepartmentId.validator}"/>
+                                                </af:selectOneChoice>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" id="gr4">
+                                            <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc6">
+                                                <af:outputFormatted value="#{item.bindings.LastName.inputValue}" id="of3"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                        <af:gridRow marginTop="5px" height="auto" marginBottom="5px" id="gr5">
+                                            <af:gridCell marginStart="5px" width="50%" marginEnd="5px" id="gc7">
+                                                <af:outputFormatted value="#{item.bindings.PhoneNumber.inputValue}" id="of4"/>
+                                            </af:gridCell>
+                                        </af:gridRow>
+                                    </af:panelGridLayout>
+                                </af:listItem>
+                            </af:listView>
+                        </af:panelGroupLayout>
+                    </af:gridCell>
+                </af:gridRow>
+            </af:panelGridLayout>
+        </af:form>
+    </af:document>
+</f:view>
