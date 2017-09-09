@@ -23,7 +23,8 @@
                             </af:panelHeader>
                             <af:listView value="#{bindings.EmployeesView1.collectionModel}" var="item"
                                          emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
-                                         fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1">
+                                         fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1" selection="single"
+                                         selectionListener="#{bindings.EmployeesView1.collectionModel.makeCurrent}">
                                 <af:listItem id="li1">
                                     <af:panelGridLayout id="pgl3">
                                         <af:gridRow marginTop="5px" height="auto" id="gr3">

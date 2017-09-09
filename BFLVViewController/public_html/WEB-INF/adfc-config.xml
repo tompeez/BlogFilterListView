@@ -3,4 +3,7 @@
   <view id="index">
     <page>/index.jsf</page>
   </view>
+  <view id="Table">
+    <page>/Table.jsf</page>
+  </view>
 </adfc-config>

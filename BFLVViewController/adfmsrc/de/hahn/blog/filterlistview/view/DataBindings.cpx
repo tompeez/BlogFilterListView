@@ -3,9 +3,11 @@
              Package="de.hahn.blog.filterlistview.view" ClientType="Generic">
   <pageMap>
     <page path="/index.jsf" usageId="de_hahn_blog_filterlistview_view_indexPageDef"/>
+    <page path="/Table.jsf" usageId="de_hahn_blog_filterlistview_view_TablePageDef"/>
   </pageMap>
   <pageDefinitionUsages>
     <page id="de_hahn_blog_filterlistview_view_indexPageDef" path="de.hahn.blog.filterlistview.view.pageDefs.indexPageDef"/>
+    <page id="de_hahn_blog_filterlistview_view_TablePageDef" path="de.hahn.blog.filterlistview.view.pageDefs.TablePageDef"/>
   </pageDefinitionUsages>
   <dataControlUsages>
     <BC4JDataControl id="BFLVAppModuleDataControl" Package="de.hahn.blog.filterlistview.model.adfbc.service"
