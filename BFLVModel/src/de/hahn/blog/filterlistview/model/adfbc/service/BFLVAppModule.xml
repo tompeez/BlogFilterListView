@@ -22,9 +22,6 @@
   <ViewUsage
     Name="DepartmentsView2"
     ViewObjectName="de.hahn.blog.filterlistview.model.adfbc.views.DepartmentsView"/>
-  <ViewUsage
-    Name="EmpTestViewObj1"
-    ViewObjectName="de.hahn.blog.filterlistview.model.adfbc.views.EmpTestViewObj"/>
   <ViewLinkUsage
     Name="EmpManagerFkLink1"
     ViewLinkObjectName="de.hahn.blog.filterlistview.model.adfbc.views.links.EmpManagerFkLink"

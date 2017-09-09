@@ -202,20 +202,9 @@
             <value n="runActiveFile" v="false"/>
             <url n="targetURL" path="public_html/WEB-INF/adfc-config.xml"/>
          </hash>
-         <hash n="Test">
-            <value n="custom" v="false"/>
-            <value n="name" v="Test"/>
-            <hash n="oracle.adfdt.controller.adfc.source.runner.AdfcRunnerLaunchSettings">
-               <value n="unboundedTaskFlow" v="true"/>
-               <value n="viewActivityId" v="Test"/>
-            </hash>
-            <value n="runActiveFile" v="false"/>
-            <url n="targetURL" path="public_html/WEB-INF/adfc-config.xml"/>
-         </hash>
       </hash>
       <list n="runConfigurationList">
          <string v="Index"/>
-         <string v="Test"/>
       </list>
    </hash>
    <hash n="oracle.jdevimpl.config.JProjectLibraries">
