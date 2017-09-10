@@ -19,5 +19,17 @@
         </AttrNames>
       </nodeDefinition>
     </tree>
+    <tree IterBinding="EmployeesView1Iterator" id="EmployeesView11">
+      <nodeDefinition DefName="de.hahn.blog.filterlistview.model.adfbc.views.EmployeesView" Name="EmployeesView110">
+        <AttrNames>
+          <Item Value="EmployeeId"/>
+          <Item Value="FirstName"/>
+          <Item Value="LastName"/>
+          <Item Value="Email"/>
+          <Item Value="PhoneNumber"/>
+          <Item Value="DepartmentId"/>
+        </AttrNames>
+      </nodeDefinition>
+    </tree>
   </bindings>
 </pageDefinition>

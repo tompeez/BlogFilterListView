@@ -21,10 +21,44 @@
                                           queryListener="#{bindings.EmployeeListCriteriaQuery.processQuery}"
                                           queryOperationListener="#{bindings.EmployeeListCriteriaQuery.processQueryOperation}" resultComponentId="::lv1"/>
                             </af:panelHeader>
+                            <af:table value="#{bindings.EmployeesView11.collectionModel}" var="row" rows="#{bindings.EmployeesView11.rangeSize}"
+                                      emptyText="#{bindings.EmployeesView11.viewable ? 'No data to display.' : 'Access Denied.'}" rowBandingInterval="0"
+                                      fetchSize="#{bindings.EmployeesView11.rangeSize}" filterModel="#{bindings.EmployeeListCriteriaQuery.queryDescriptor}"
+                                      filterVisible="true" queryListener="#{bindings.EmployeeListCriteriaQuery.processQuery}" varStatus="vs" id="t1"
+                                      inlineStyle="max-height:65px;">
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.EmployeeId.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.EmployeeId.label}" id="c1">
+                                    <af:outputText value="#{row.EmployeeId}" shortDesc="#{bindings.EmployeesView11.hints.EmployeeId.tooltip}" id="ot2">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView11.hints.EmployeeId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.FirstName.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.FirstName.label}" id="c2">
+                                    <af:outputText value="#{row.FirstName}" shortDesc="#{bindings.EmployeesView11.hints.FirstName.tooltip}" id="ot3"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.LastName.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.LastName.label}" id="c3">
+                                    <af:outputText value="#{row.LastName}" shortDesc="#{bindings.EmployeesView11.hints.LastName.tooltip}" id="ot4"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.Email.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.Email.label}" id="c4">
+                                    <af:outputText value="#{row.Email}" shortDesc="#{bindings.EmployeesView11.hints.Email.tooltip}" id="ot5"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.PhoneNumber.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.PhoneNumber.label}" id="c5">
+                                    <af:outputText value="#{row.PhoneNumber}" shortDesc="#{bindings.EmployeesView11.hints.PhoneNumber.tooltip}" id="ot6"/>
+                                </af:column>
+                                <af:column sortProperty="#{bindings.EmployeesView11.hints.DepartmentId.name}" filterable="true" sortable="true"
+                                           headerText="#{bindings.EmployeesView11.hints.DepartmentId.label}" id="c6">
+                                    <af:outputText value="#{row.DepartmentId}" shortDesc="#{bindings.EmployeesView11.hints.DepartmentId.tooltip}" id="ot7">
+                                        <af:convertNumber groupingUsed="false" pattern="#{bindings.EmployeesView11.hints.DepartmentId.format}"/>
+                                    </af:outputText>
+                                </af:column>
+                            </af:table>
                             <af:listView value="#{bindings.EmployeesView1.collectionModel}" var="item"
                                          emptyText="#{bindings.EmployeesView1.viewable ? 'No data to display.' : 'Access Denied.'}"
                                          fetchSize="#{bindings.EmployeesView1.rangeSize}" id="lv1" selection="single"
-                                         selectionListener="#{bindings.EmployeesView1.collectionModel.makeCurrent}">
+                                         selectionListener="#{bindings.EmployeesView1.collectionModel.makeCurrent}" partialTriggers="::t1">
                                 <af:listItem id="li1">
                                     <af:panelGridLayout id="pgl3">
                                         <af:gridRow marginTop="5px" height="auto" id="gr3">
